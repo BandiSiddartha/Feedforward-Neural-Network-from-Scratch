@@ -25,6 +25,7 @@ venv/
 *.log
 *.txt
 !Extra.txt
+!requirements.txt
 
 # IDE
 .vscode/

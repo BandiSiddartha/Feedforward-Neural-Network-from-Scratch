@@ -82,14 +82,15 @@ The model was trained under all activation × training-mode combinations:
 ## Repository Contents
 
 ```
-Team Project 2/
+Feedforward-Neural-Network-from-Scratch/
 ├── README.md
-├── nnmodelflight.py                                              # Main FFNN implementation
-├── input_fl_12477                                                # Raw flight telemetry data
-├── Report.pdf                                                    # Team submission (PDF)
+├── requirements.txt
+├── nnmodelflight.py       # Main FFNN implementation
+├── data/
+│   └── input_fl_12477.txt # Raw flight telemetry data
+└── reports/
+    └── ffnn-aircraft-pitch-report.pdf
 ```
-
-> **Note:** The `.zip` archive is excluded from this repository.
 
 ---
 
@@ -97,7 +98,7 @@ Team Project 2/
 
 ### Install Dependencies
 ```bash
-pip install pandas numpy matplotlib scikit-learn
+pip install -r requirements.txt
 ```
 
 ### Run the Model
@@ -106,7 +107,7 @@ python nnmodelflight.py
 ```
 
 The script will:
-1. Load and preprocess `input_fl_12477`
+1. Load and preprocess `data/input_fl_12477.txt`
 2. Train the FFNN with each activation function (Sigmoid, Tanh, ReLU)
 3. Log training MSE per iteration to `training.log`
 4. Save final model weights and metrics to a parameter file
@@ -117,7 +118,7 @@ The script will:
 ## Key Results
 
 - All three activation functions successfully learned pitch prediction from telemetry features
-- **Tanh** achieved the best R² on the test set with smooth convergence
+- Best configuration achieved **R² = 0.9655 (96.55%)** on the test set
 - Early stopping effectively prevented overfitting across all configurations
 - The custom backpropagation implementation matched expected gradient behavior
 
@@ -131,7 +132,7 @@ The script will:
 | Numerical Computing | NumPy |
 | Data Processing | Pandas, Scikit-learn (preprocessing only) |
 | Visualization | Matplotlib |
-| Environment | Google Colab |
+| Environment | Python 3.x (local or Colab) |
 
 ---
 

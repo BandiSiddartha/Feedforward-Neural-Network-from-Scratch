@@ -16,11 +16,13 @@ Original file is located at
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from pathlib import Path
 from sklearn.preprocessing import StandardScaler
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score
 
-df_1 = pd.read_csv('/content/drive/MyDrive/Colab Notebooks/527 - Predictive Modeling/Team Project 2/input_fl_12477', sep='\s+')
+DATA_DIR = Path(__file__).resolve().parent / "data"
+df_1 = pd.read_csv(DATA_DIR / "input_fl_12477.txt", sep=r'\s+')
 
 print(df_1.columns.tolist())
 
